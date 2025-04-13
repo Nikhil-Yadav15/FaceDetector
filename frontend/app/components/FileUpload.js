@@ -31,7 +31,7 @@ const FileUpload = () => {
 
 
     try {
-      const response = await axios.post('facedetector-production-008e.up.railway.app/', formData, {
+      const response = await axios.post('https://facedetector-production-008e.up.railway.app/', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
