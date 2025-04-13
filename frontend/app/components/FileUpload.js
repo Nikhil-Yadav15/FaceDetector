@@ -27,7 +27,7 @@ const FileUpload = () => {
 
     setLoading(true);
     const formData = new FormData();
-    formData.append('file', file); // ✅ Match the field name expected by FastAPI
+    formData.append('file', file);
 
 
     try {
@@ -52,12 +52,12 @@ const FileUpload = () => {
         className="border-2 border-dashed border-gray-300 p-6 text-center cursor-pointer hover:bg-gray-50"
       >
         <input {...getInputProps()} />
-        <p>Drag & drop an image here, or click to select</p>
+        <p className='text-black'>Drag & drop an image here, or click to select</p>
       </div>
 
       {previewUrl && (
         <div className="mt-4">
-          <h3 className="text-lg font-medium mb-2">Preview:</h3>
+          <h3 className="text-lg font-medium mb-2 text-black">Preview:</h3>
           <img 
             src={previewUrl} 
             alt="Preview" 
@@ -69,7 +69,7 @@ const FileUpload = () => {
       <button
         onClick={handleUpload}
         disabled={!file || loading}
-        className={`mt-4 w-full py-2 px-4 rounded-md text-white ${!file || loading ? 'bg-gray-400 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700'}`}
+        className={`mt-4 w-full py-2 px-4 rounded-md text-white ${!file || loading ? 'bg-gray-400 cursor-not-allowed' : 'bg-blue-600 hover:cursor-pointer hover:bg-blue-700'}`}
       >
         {loading ? 'Processing...' : 'Verify Image'}
       </button>
