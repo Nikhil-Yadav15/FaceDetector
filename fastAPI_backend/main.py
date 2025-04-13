@@ -10,7 +10,7 @@ app = FastAPI()
 # Allow requests from your Next.js frontend (usually runs on localhost:3000 for development)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # Adjust this based on your frontend's URL
+    allow_origins=["https://face-detector-olive.vercel.app"],  # Adjust this based on your frontend's URL
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
